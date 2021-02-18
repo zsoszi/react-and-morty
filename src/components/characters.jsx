@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Character from "./character";
 import { useCharacters } from "../useFetch/useData";
+import Page from "./page";
 
 function Characters(props) {
-	let pageNum = "";
-
-	const character = useCharacters(pageNum);
+	const [page, setPage] = useState(1);
+	const character = useCharacters(page);
 
 	let list = [];
 
@@ -18,11 +18,35 @@ function Characters(props) {
 				image={item.image}
 				name={item.name}
 				species={item.species}
+				gender={item.gender}
+				origin={item.origin.name}
+				location={item.location.name}
 			/>
 		));
 	}
+	const gotoNextPage = () => {
+		setPage(page + 1);
+	};
+	const gotoPrevPage = () => {
+		setPage(page - 1);
+	};
 
-	return <div className="charContainer">{list}</div>;
+	return (
+		<div>
+			<div className="charContainer">{list}</div>
+			<button
+				id="home"
+				onClick={(event) => (window.location.href = "../App.js")}
+			>
+				Home
+			</button>
+
+			<Page
+				gotoNextPage={gotoNextPage}
+				gotoPrevPage={page ? gotoPrevPage : null}
+			/>
+		</div>
+	);
 }
 
 export default Characters;

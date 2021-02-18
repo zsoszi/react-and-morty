@@ -32,7 +32,6 @@ function App() {
 					<img className="bgImage" src={IMG} alt="" />
 					<Text />
 				</div>
-						
 			) : (
 				<div className="card">
 					{char && <Characters />}

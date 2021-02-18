@@ -3,12 +3,13 @@
 	src: url("./get_schwifty.ttf");
 }
 
+button {
+	cursor: pointer;
+}
 .App {
 	text-align: center;
 	text-decoration: none;
 }
-
-
 
 .bgImage {
 	width: 750px;
@@ -18,6 +19,33 @@
 .locationsBtn {
 	margin: 5px;
 	width: 150px;
+	height: 30px;
+	border: none;
+	border-radius: 2px;
+	font-size: 100%;
+	font-weight: 900;
+	font-family: "get-schwifty";
+	background-image: url("./btnbg.png");
+}
+#prev,
+#next {
+	margin: 5px;
+	width: 150px;
+	height: 30px;
+	border: none;
+	border-radius: 2px;
+	font-size: 100%;
+	font-weight: 900;
+	font-family: "get-schwifty";
+	background-image: url("./btnbg.png");
+}
+
+#home {
+	position: absolute;
+	display: flex;
+	margin: 5px;
+	top: 0;
+	width: 50px;
 	height: 30px;
 	border: none;
 	border-radius: 2px;
@@ -44,7 +72,7 @@
 	/* background-image: url('./btnbg.png'); */
 }
 .charContainer,
-.locContainer{
+.locContainer {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -62,6 +90,9 @@
 	color: rgb(255, 255, 255);
 	font-family: "get-schwifty";
 }
+.charName {
+	height: 80px;
+}
 
 .locCard {
 	margin: 5px;
@@ -70,7 +101,7 @@
 	font-size: 20px;
 	font-weight: 700;
 	width: 250px;
-	height: 150px;
+	height: 200px;
 	border: 5px solid transparent;
 	border-image: url("./btnbg.png") 30 round;
 	/* background-image: url('./btnbg.png'); */
@@ -80,4 +111,32 @@ a {
 	position: absolute;
 	color: white;
 	font-size: 35px;
+}
+
+.charVisible {
+	width: 250px;
+	height: 500px;
+	z-index: 10;
+	font-size: 20px;
+	font-weight: 700;
+	color: rgb(255, 255, 255);
+	font-family: "get-schwifty";
+	background-image: url("./stars-black-background.jpg");
+	border: 5px solid transparent;
+	border-image: url("./btnbg.png") 30 round;
+	position: absolute;
+}
+
+.locVisible {
+	width: 300px;
+	height: 300px;
+	z-index: 10;
+	font-size: 20px;
+	font-weight: 700;
+	color: rgb(255, 255, 255);
+	font-family: "get-schwifty";
+	background-image: url("./stars-black-background.jpg");
+	border: 5px solid transparent;
+	border-image: url("./btnbg.png") 30 round;
+	position: absolute;
 }
